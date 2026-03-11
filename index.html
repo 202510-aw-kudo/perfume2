@@ -1,1318 +1,379 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#E8D8D6">
-    <title>Homepage</title>
+    <title>Fragrance Workshop Asakusa</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4ece7;
-            margin: 0;
-        }
-
-        .page {
-            width: min(700px, calc(100% - 32px));
-            margin: auto;
-            background: #fcf8f4;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #cfcfcf;
-        }
-
-        /* NAVBAR */
-
-        .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            min-height: 80px;
-            margin: -20px -20px 14px;
-            padding: 0 58px 0 34px;
-            background: #F2DCDC;
-            border-top: 1px solid #d4ceca;
-            border-bottom: 1px solid #d4ceca;
-            box-sizing: border-box;
-        }
-
-        .navbar-logo {
-            font-size: 18px;
-            font-weight: 400;
-            color: #111;
-        }
-
-        .navlinks {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            margin-left: 210px;
-        }
-
-        .navlinks a {
-            color: #111;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 400;
-            line-height: 1;
-        }
-
-        .navlinks a:hover {
-            opacity: 0.75;
-        }
-
-        /* HERO */
-
-        .hero {
-            height: 200px;
-            background:
-                linear-gradient(rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)),
-                url('images/hero.png') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 10px;
-            text-align: center;
-            gap: 12px;
-        }
-
-        .hero-title {
-            font-size: 28px;
-            font-weight: 800;
-            font-family: Georgia, "Times New Roman", serif;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
-        }
-
-        .hero-meta {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            font-family: Georgia, "Times New Roman", serif;
-            color: #fff;
-            font-variant-numeric: lining-nums tabular-nums;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-        }
-
-        .hero-cta {
-            padding: 8px 18px;
-            border: 1px solid #333;
-            background: #d9899f;
-            color: #fff;
-            font-weight: bold;
-            border-color: #d9899f;
-            border-radius: 999px;
-        }
-
-        /* EXPERIENCE */
-
-        .experience-section {
-            margin-top: 28px;
-        }
-
-        .experience-section h2 {
-            margin: 0 0 20px;
-            text-align: center;
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .experience-card {
-            overflow: hidden;
-            border-radius: 18px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-            background: #fff;
-        }
-
-        .experience-image {
-            height: 260px;
-            background-color: #d9cec6;
-            background-size: cover;
-            background-position: center 22%;
-        }
-
-        .experience-image.concept-image {
-            background-image:
-                linear-gradient(rgba(92, 66, 56, 0.08), rgba(92, 66, 56, 0.08)),
-                url('images/about-concept.png');
-        }
-
-        .experience-image.create-image {
-            background-image:
-                linear-gradient(rgba(77, 58, 50, 0.08), rgba(77, 58, 50, 0.08)),
-                url('images/about-create.png');
-        }
-
-        .experience-content {
-            background: #fff;
-            padding: 22px;
-        }
-
-        .experience-content h3 {
-            margin: 0 0 12px;
-            font-size: 20px;
-            text-transform: capitalize;
-        }
-
-        .experience-content p {
-            margin: 0;
-            line-height: 1.6;
-            color: #444;
-        }
-
-        /* CARDS */
-
-        .cards {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            flex: 1;
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-
-        .img {
-            height: 120px;
-            background: #ddd;
-            margin-bottom: 10px;
-        }
-
-        /* CIRCLES */
-
-        .circle-section {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .circle {
-            width: 100px;
-            height: 100px;
-            background: #ddd;
-            border-radius: 50%;
-            margin: auto;
-        }
-
-        /* PRICING */
-
-        .pricing-section {
-            margin-top: 28px;
-            text-align: center;
-        }
-
-        .pricing-section h2 {
-            margin: 0;
-            font-size: 30px;
-        }
-
-        .pricing-line {
-            width: 72px;
-            height: 3px;
-            margin: 12px auto 24px;
-            border-radius: 999px;
-            background: #d7b5a1;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-            align-items: stretch;
-        }
-
-        .pricing-card {
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            text-align: center;
-            position: relative;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pricing-card.featured {
-            transform: translateY(0);
-            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .pricing-badge {
-            display: inline-block;
-            margin: 0 auto 10px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: #d9899f;
-            color: #fff;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .pricing-image {
-            height: 220px;
-            border-radius: 20px 20px 0 0;
-            background-color: #d9cec6;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .pricing-image.standard-image {
-            background-image:
-                linear-gradient(rgba(86, 62, 54, 0.08), rgba(86, 62, 54, 0.08)),
-                url('images/pricing-standard.png');
-        }
-
-        .pricing-image.couple-image {
-            background-image:
-                linear-gradient(rgba(91, 58, 70, 0.08), rgba(91, 58, 70, 0.08)),
-                url('images/pricing-couple.png');
-        }
-
-        .pricing-image.addon-image {
-            background-image:
-                linear-gradient(rgba(74, 60, 47, 0.08), rgba(74, 60, 47, 0.08)),
-                url('images/pricing-addon.png');
-        }
-
-        .pricing-content {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            padding: 16px 18px 18px;
-        }
-
-        .pricing-content h3 {
-            margin: 0 0 10px;
-            font-size: 24px;
-        }
-
-        .pricing-details {
-            margin: 0;
-            color: #555;
-            line-height: 1.65;
-        }
-
-        .pricing-footer {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding-top: 14px;
-        }
-
-        .pricing-grid>.pricing-card:first-child .pricing-footer {
-            margin-top: 48px;
-        }
-
-        .pricing-price {
-            margin: 0;
-            font-size: 28px;
-            font-weight: bold;
-            color: #222;
-        }
-
-        .pricing-button {
-            display: inline-block;
-            min-width: 160px;
-            padding: 10px 22px;
-            border-radius: 999px;
-            background: #d9899f;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            box-sizing: border-box;
-            margin-top: 0;
-        }
-
-        .pricing-button-placeholder {
-            visibility: hidden;
-        }
-
-        /* BANNER */
-
-        .banner {
-            height: 150px;
-            background: #ddd;
-            margin-top: 20px;
-        }
-
-        .reserve-section {
-            margin-top: 28px;
-            text-align: center;
-        }
-
-        .reserve-image {
-            width: 100%;
-            height: 210px;
-            margin: 0 auto 24px;
-            overflow: hidden;
-            border-radius: 24px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-            background-color: #d7c3b6;
-        }
-
-        .reserve-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .reserve-title {
-            margin: 0 0 10px;
-            font-size: 32px;
-            color: #222;
-        }
-
-        .reserve-subtitle {
-            max-width: 620px;
-            margin: 0 auto 24px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .reserve-steps {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-            margin-bottom: 26px;
-        }
-
-        .reserve-step {
-            padding: 18px 16px;
-            border-radius: 18px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-            text-align: center;
-        }
-
-        .reserve-step h3 {
-            margin: 0 0 8px;
-            font-size: 20px;
-            color: #222;
-        }
-
-        .reserve-step-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 10px;
-            border-radius: 50%;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-            font-size: 22px;
-        }
-
-        .reserve-step p {
-            margin: 0;
-            color: #555;
-            line-height: 1.45;
-        }
-
-        .reserve-step-date {
-            background: #86c8d2;
-        }
-
-        .reserve-step-date .reserve-step-icon {
-            color: #4ab8be;
-        }
-
-        .reserve-step-participants {
-            background: #efb7b0;
-        }
-
-        .reserve-step-participants .reserve-step-icon {
-            color: #4ab8be;
-        }
-
-        .reserve-step-payment {
-            background: #f0c16d;
-        }
-
-        .reserve-step-payment .reserve-step-icon {
-            color: #e3a53d;
-        }
-
-        .reserve-step-confirmation {
-            background: #a7d6a5;
-        }
-
-        .reserve-step-confirmation .reserve-step-icon {
-            color: #69b979;
-        }
-
-        .reserve-button {
-            display: inline-block;
-            min-width: 180px;
-            padding: 12px 28px;
-            border-radius: 999px;
-            background: #d9899f;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .faq-section {
-            max-width: 820px;
-            margin: 32px auto 0;
-            text-align: center;
-            background: #f5e7e7;
-            padding: 28px 22px;
-            border-radius: 8px;
-        }
-
-        .faq-title {
-            margin: 0 0 20px;
-            font-size: 32px;
-            color: #222;
-        }
-
-        .faq-accordion {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .faq-item {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
-            overflow: hidden;
-            text-align: left;
-        }
-
-        .faq-item:nth-child(2) {
-            background: #fff;
-        }
-
-        .faq-item:nth-child(3) {
-            background: #fff;
-        }
-
-        .faq-question {
-            width: 100%;
-            border: 0;
-            background: #dfeadf;
-            padding: 20px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #222;
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .faq-item:nth-child(2) .faq-question {
-            background: #9fd39d;
-        }
-
-        .faq-item:nth-child(3) .faq-question {
-            background: #f3e5c8;
-        }
-
-        .faq-arrow {
-            flex-shrink: 0;
-            font-size: 24px;
-            line-height: 1;
-            color: #c98398;
-            transition: transform 0.25s ease;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-answer p {
-            margin: 0;
-            padding: 14px 22px 18px;
-            color: #555;
-            line-height: 1.6;
-            background: #fff;
-        }
-
-        .faq-item.active .faq-arrow {
-            transform: rotate(45deg);
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 160px;
-        }
-
-        .access-section {
-            margin-top: 36px;
-            text-align: center;
-        }
-
-        .access-section h2 {
-            margin: 0 0 10px;
-            font-size: 32px;
-            color: #222;
-        }
-
-        .access-subtitle {
-            max-width: 620px;
-            margin: 0 auto 24px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .access-layout {
-            display: flex;
-            gap: 22px;
-            align-items: stretch;
-        }
-
-        .access-map-area {
-            flex: 1.35;
-            display: flex;
-        }
-
-        .access-map {
-            flex: 1;
-            height: 100%;
-            border-radius: 22px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-            background:
-                linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)),
-                url('images/access-map.png') center/cover no-repeat;
-        }
-
-        .access-info {
-            flex: 0.95;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .access-card {
-            padding: 14px 16px;
-            border-radius: 10px;
-            box-shadow: none;
-            text-align: left;
-        }
-
-        .access-card h3 {
-            margin: 0 0 4px;
-            font-size: 18px;
-            font-weight: normal;
-            color: #222;
-        }
-
-        .access-card p {
-            margin: 0;
-            color: #333;
-            line-height: 1.4;
-            font-size: 15px;
-        }
-
-        .access-card-address {
-            background: #efb1ae;
-        }
-
-        .access-card-station {
-            background: #8fd0df;
-        }
-
-        .access-card-hours {
-            background: #f0bd67;
-        }
-
-        .access-features {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        .access-feature {
-            padding: 4px 6px;
-            border-radius: 0;
-            background: transparent;
-            box-shadow: none;
-            color: #333;
-            font-size: 14px;
-            line-height: 1.3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 6px;
-        }
-
-        .access-feature i {
-            font-size: 20px;
-        }
-
-        .access-feature p {
-            margin: 0;
-        }
-
-        .feature-icon-1 {
-            color: #5fbcc2;
-        }
-
-        .feature-icon-2 {
-            color: #e8b15c;
-        }
-
-        .feature-icon-3 {
-            color: #7fbf8f;
-        }
-
-        .access-card-title {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .access-card-icon {
-            font-size: 14px;
-        }
-
-        .access-card-address .access-card-icon {
-            color: #d35b59;
-        }
-
-        .access-card-station .access-card-icon {
-            color: #2b6f7f;
-        }
-
-        .access-card-hours .access-card-icon {
-            color: #c27d1f;
-        }
-
-        /* STEPS */
-
-        .steps {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .step {
-            flex: 1;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .step1 {
-            background: #aeeeee;
-        }
-
-        .step2 {
-            background: #f4d6a0;
-        }
-
-        .step3 {
-            background: #ffe79c;
-        }
-
-        .step4 {
-            background: #b8e8b8;
-        }
-
-        .flow-section {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .flow-title {
-            margin: 0 0 24px;
-            font-size: 28px;
-        }
-
-        .flow-title span {
-            color: #c94b4b;
-        }
-
-        .flow-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-            align-items: start;
-        }
-
-        .flow-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .flow-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            background: radial-gradient(circle at top, #f2ddd2 0, #d7b5a1 45%, #b78e79 100%);
-            background-size: cover;
-            background-position: center;
-            margin-bottom: -20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .flow-image.step-1-image {
-            background-image: url('images/flow-step-1.png');
-        }
-
-        .flow-image.step-2-image {
-            background-image: url('images/flow-step-2.png');
-        }
-
-        .flow-image.step-3-image {
-            background-image: url('images/flow-step-3.png');
-        }
-
-        .flow-content {
-            width: 100%;
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-            padding: 32px 20px 22px;
-            box-sizing: border-box;
-        }
-
-        .flow-step {
-            margin: 0 0 8px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #c94b4b;
-        }
-
-        .flow-card-title {
-            margin: 0 0 10px;
-            font-size: 22px;
-        }
-
-        .flow-card-text {
-            margin: 0;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        /* FAQ */
-
-        .faq {
-            margin-top: 20px;
-        }
-
-        .question {
-            background: #dff5d6;
-            padding: 10px;
-            margin-top: 5px;
-        }
-
-        /* MAP */
-
-        .map {
-            height: 120px;
-            background: #ddd;
-            margin-top: 20px;
-        }
-
-        /* FOOTER */
-
-        .footer {
-            margin-top: 20px;
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-            text-align: center;
-        }
-
-        .site-footer {
-            margin-top: 48px;
-            padding: 38px 30px 20px;
-            background: #f7e9eb;
-            border-radius: 28px 28px 0 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.35fr 1fr 1fr 0.8fr;
-            gap: 34px;
-            align-items: start;
-        }
-
-        .site-footer h3 {
-            margin: 0 0 16px;
-            font-size: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-            color: #222;
-        }
-
-        .site-footer p,
-        .site-footer a,
-        .site-footer li,
-        .site-footer span {
-            color: #333;
-            font-size: 15px;
-            line-height: 1.7;
-            text-decoration: none;
-        }
-
-        .footer-brand p {
-            margin: 0;
-        }
-
-        .footer-links ul,
-        .footer-legal ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .footer-links li,
-        .footer-legal li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a,
-        .footer-legal a {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-links i {
-            width: 18px;
-            font-size: 15px;
-        }
-
-        .footer-links li:nth-child(1) i {
-            color: #d9899f;
-        }
-
-        .footer-links li:nth-child(2) i {
-            color: #e8b15c;
-        }
-
-        .footer-links li:nth-child(3) i {
-            color: #a98bc8;
-        }
-
-        .footer-links li:nth-child(4) i {
-            color: #d8707f;
-        }
-
-        .footer-legal a i {
-            width: 18px;
-            color: #9a9a9a;
-            font-size: 15px;
-        }
-
-        .footer-social {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            padding-top: 4px;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .footer-social-icons a {
-            font-size: 20px;
-            line-height: 1;
-        }
-
-        .footer-social-icons a:nth-child(1) {
-            color: #d8707f;
-        }
-
-        .footer-social-icons a:nth-child(2) {
-            color: #5b8fd9;
-        }
-
-        .footer-social-icons a:nth-child(3) {
-            color: #222;
-        }
-
-        .footer-bottom {
-            margin-top: 26px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
-            color: #555;
-        }
-
-        @media (max-width: 200px) {
-            .hero-meta {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .flow-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .reserve-steps {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 520px) {
-            .reserve-image {
-                height: 170px;
-            }
-
-            .reserve-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .faq-question {
-                padding: 18px;
-                font-size: 16px;
-            }
-
-            .faq-answer p {
-                padding: 0 18px 18px;
-            }
-
-            .access-layout {
-                flex-direction: column;
-            }
-
-            .access-features {
-                grid-template-columns: 1fr;
-            }
-
-            .access-map {
-                min-height: 240px;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 26px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .site-footer {
-                padding: 28px 20px 18px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 22px;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="container navbar">
+                <a class="brand" href="#top" aria-label="Fragrance Workshop home">
+                    <span class="brand-copy">
+                        <strong>Atelier Asakusa</strong>
+                        <small>Fragrance Workshop</small>
+                    </span>
+                </a>
 
-    <div class="page">
+                <div class="navbar-actions">
+                    <nav class="navlinks" id="site-nav" aria-label="Primary">
+                        <a href="#about">About</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#reservation">Reservation</a>
+                        <a href="#faq">FAQ</a>
+                        <a href="#access">Access</a>
+                    </nav>
 
-        <div class="navbar">
-            <div class="navbar-logo">
-                LOGO
+                    <a class="nav-cta" href="#reservation">Book a private session</a>
+                </div>
+
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+                    aria-label="Open navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <nav class="navlinks" aria-label="Primary">
-                <a href="#about">About</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#reservation">Reservation</a>
-                <a href="#faq">FAQ</a>
-                <a href="#access">Access</a>
-            </nav>
-        </div>
+        </header>
 
-        <div class="hero">
-            <div class="hero-title">Create Your Own Perfume in Asakusa</div>
-            <div class="hero-meta">
-                <div>Price: &yen;5500</div>
-                <div>Duration: 1 hour</div>
-            </div>
-            <div class="hero-cta">Book Now</div>
-        </div>
-
-        <section class="experience-section" id="about">
-            <h2>About The Experience</h2>
-            <div class="experience-grid">
-                <article class="experience-card">
-                    <div class="experience-image concept-image"></div>
-                    <div class="experience-content">
-                        <h3>concept</h3>
-                        <p>Inspired by Japanese nature and traditional craftsmanship, this workshop lets you create your
-                            own unique fragrance. Discover different scents, blend your own perfume, and take home a
-                            personal memory from Asakusa.</p>
+        <main id="top">
+            <section class="hero">
+                <div class="container hero-content">
+                    <p class="hero-kicker">Private fragrance atelier in Asakusa</p>
+                    <h1 class="hero-title"><span>Create Your Own</span><span>Perfume in Asakusa</span></h1>
+                    <p class="hero-description">
+                        Discover Japanese-inspired botanicals, blend your own signature scent, and leave with an
+                        elegant bottle crafted entirely around your taste.
+                    </p>
+                    <div class="hero-meta">
+                        <span>From &yen;5,500</span>
+                        <span>Approx. 60 minutes</span>
+                        <span>English support available</span>
                     </div>
-                </article>
-
-                <article class="experience-card">
-                    <div class="experience-image create-image"></div>
-                    <div class="experience-content">
-                        <h3>What you create</h3>
-                        <p>During the workshop, you will explore a variety of natural scents inspired by Japanese
-                            nature. With guidance from our staff, you will blend your own perfume and create a fragrance
-                            that reflects your personality. At the end of the experience, you will take home a bottle of
-                            your unique perfume as a special memory of Asakusa.</p>
+                    <div class="hero-actions">
+                        <a class="hero-cta" href="#reservation">Reserve your session</a>
+                        <a class="hero-link" href="#pricing">Explore experiences</a>
                     </div>
-                </article>
-            </div>
-        </section>
+                    <p class="hero-note">A limited number of private appointments are released each day.</p>
+                </div>
+            </section>
 
-        <section class="flow-section">
-            <h2 class="flow-title">Experience <span>Flow</span></h2>
-            <div class="flow-grid">
-                <article class="flow-card">
-                    <div class="flow-image step-1-image"></div>
-                    <div class="flow-content">
-                        <p class="flow-step">Step 1</p>
-                        <h3 class="flow-card-title">Choose scent</h3>
-                        <p class="flow-card-text">Pick your favorite natural aromas</p>
+            <section class="section intro-section" id="about">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="section-kicker">About</p>
+                        <h2>The fragrance experience</h2>
+                        <p class="section-lead">
+                            A calm, design-led workshop inspired by Japanese nature, refined materials, and the art of
+                            slow creation.
+                        </p>
                     </div>
-                </article>
 
-                <article class="flow-card">
-                    <div class="flow-image step-2-image"></div>
-                    <div class="flow-content">
-                        <p class="flow-step">Step 2</p>
-                        <h3 class="flow-card-title">Blend perfume</h3>
-                        <p class="flow-card-text">Create your own unique fragrance</p>
+                    <div class="experience-grid">
+                        <article class="experience-card">
+                            <img src="images/about-concept.png" alt="Perfume ingredients and atelier tools">
+                            <div class="experience-content">
+                                <p class="card-label">Concept</p>
+                                <h3>Crafted around Japanese sensibility</h3>
+                                <p>
+                                    Inspired by nature and traditional craftsmanship, the workshop invites you to
+                                    explore subtle accords, delicate balance, and a more personal approach to perfume.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="experience-card">
+                            <img src="images/about-create.png" alt="Guest creating a custom perfume blend">
+                            <div class="experience-content">
+                                <p class="card-label">Creation</p>
+                                <h3>Blend a scent that feels entirely yours</h3>
+                                <p>
+                                    During the workshop, you will explore a variety of natural scents inspired by
+                                    Japanese nature. With guidance from our staff, you will blend your own perfume and
+                                    create a fragrance that reflects your personality. At the end of the experience,
+                                    you will take home a bottle of your unique perfume as a special memory of Asakusa.
+                                </p>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                </div>
+            </section>
 
-                <article class="flow-card">
-                    <div class="flow-image step-3-image"></div>
-                    <div class="flow-content">
-                        <p class="flow-step">Step 3</p>
-                        <h3 class="flow-card-title">Take memory</h3>
-                        <p class="flow-card-text">Take home your personal perfume</p>
+            <section class="section flow-section">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="section-kicker">Process</p>
+                        <h2>A simple and elegant flow</h2>
                     </div>
-                </article>
-            </div>
-        </section>
 
-        <section class="pricing-section" id="pricing">
-            <h2>Plan &amp; Pricing</h2>
-            <div class="pricing-line"></div>
-            <div class="pricing-grid">
-                <article class="pricing-card basic-card">
-                    <div class="pricing-image standard-image"></div>
-                    <div class="pricing-content">
-                        <h3>Standard Plan</h3>
-                        <p class="pricing-details">1 person<br>Create your own perfume<br>Duration : 1 hour</p>
-                        <div class="pricing-footer">
-                            <p class="pricing-price">&yen;5500</p>
-                            <a class="pricing-button" href="#">Book Now</a>
+                    <div class="flow-grid">
+                        <article class="flow-card">
+                            <div class="flow-media">
+                                <img src="images/flow-step-1.png" alt="Choosing fragrance notes">
+                            </div>
+                            <div class="flow-content">
+                                <p class="flow-step">01</p>
+                                <h3>Choose your notes</h3>
+                                <p>Discover a curated library of scents and identify the accords that resonate with
+                                    you.</p>
+                            </div>
+                        </article>
+
+                        <article class="flow-card">
+                            <div class="flow-media">
+                                <img src="images/flow-step-2.png" alt="Blending perfume in the atelier">
+                            </div>
+                            <div class="flow-content">
+                                <p class="flow-step">02</p>
+                                <h3>Blend with guidance</h3>
+                                <p>Adjust balance, depth, and character with support from our atelier team.</p>
+                            </div>
+                        </article>
+
+                        <article class="flow-card">
+                            <div class="flow-media">
+                                <img src="images/flow-step-3.png" alt="Finished perfume bottle to take home">
+                            </div>
+                            <div class="flow-content">
+                                <p class="flow-step">03</p>
+                                <h3>Take your bottle home</h3>
+                                <p>Leave with a finished fragrance that captures your visit in a tangible way.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section pricing-section" id="pricing">
+                <div class="container">
+                    <div class="section-heading">
+                        <p class="section-kicker">Pricing</p>
+                        <h2>Choose the experience that suits you</h2>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <article class="pricing-card">
+                            <img class="pricing-image" src="images/pricing-standard.png"
+                                alt="Standard perfume workshop experience">
+                            <div class="pricing-content">
+                                <p class="card-label">For one guest</p>
+                                <h3>Standard Session</h3>
+                                <p class="pricing-details">Create one personalized perfume in a private 60-minute
+                                    atelier session.</p>
+                                <div class="pricing-footer">
+                                    <p class="pricing-price">&yen;5,500</p>
+                                    <a class="pricing-button" href="#reservation">Book now</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="pricing-card featured">
+                            <div class="pricing-badge">Most popular</div>
+                            <img class="pricing-image" src="images/pricing-couple.png"
+                                alt="Couple perfume workshop experience">
+                            <div class="pricing-content">
+                                <p class="card-label">For two guests</p>
+                                <h3>Couple Session</h3>
+                                <p class="pricing-details">Create two fragrances together and enjoy a shared atelier
+                                    experience.</p>
+                                <div class="pricing-footer">
+                                    <p class="pricing-price">&yen;10,000</p>
+                                    <a class="pricing-button" href="#reservation">Reserve together</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="pricing-card">
+                            <img class="pricing-image" src="images/pricing-addon.png" alt="Luxury bottle and extras">
+                            <div class="pricing-content">
+                                <p class="card-label">Optional extras</p>
+                                <h3>Finishing Touches</h3>
+                                <p class="pricing-details">Upgrade your bottle, select premium ingredients, or add gift
+                                    packaging.</p>
+                                <div class="pricing-footer">
+                                    <p class="pricing-price">From &yen;1,000</p>
+                                    <a class="pricing-button secondary" href="#reservation">Ask on site</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section reservation-section" id="reservation">
+                <div class="container reservation-layout">
+                    <div class="reservation-media">
+                        <img src="images/reserve-workshop.png" alt="Elegant perfume workshop in Asakusa">
+                    </div>
+
+                    <div class="reservation-content">
+                        <p class="section-kicker">Reservation</p>
+                        <h2>Reserve your atelier visit</h2>
+                        <p class="section-lead">
+                            The booking process is simple and designed to keep the experience calm from the very first
+                            step.
+                        </p>
+
+                        <div class="reserve-steps">
+                            <article class="reserve-step">
+                                <div class="reserve-step-icon"><i class="fa-regular fa-calendar"></i></div>
+                                <h3>Select a date</h3>
+                                <p>Choose the day that fits your travel schedule.</p>
+                            </article>
+                            <article class="reserve-step">
+                                <div class="reserve-step-icon"><i class="fa-solid fa-user-group"></i></div>
+                                <h3>Choose guests</h3>
+                                <p>Book for yourself, for two, or for a small private visit.</p>
+                            </article>
+                            <article class="reserve-step">
+                                <div class="reserve-step-icon"><i class="fa-regular fa-credit-card"></i></div>
+                                <h3>Confirm payment</h3>
+                                <p>Secure the session with a smooth and simple checkout.</p>
+                            </article>
+                            <article class="reserve-step">
+                                <div class="reserve-step-icon"><i class="fa-solid fa-check"></i></div>
+                                <h3>Receive details</h3>
+                                <p>Your confirmation arrives instantly with all practical information.</p>
+                            </article>
+                        </div>
+
+                        <a href="#" class="reserve-button">Reserve now</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section faq-section" id="faq">
+                <div class="container faq-shell">
+                    <div class="section-heading">
+                        <p class="section-kicker">FAQ</p>
+                        <h2>Helpful details before your visit</h2>
+                    </div>
+
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>Do I need to bring anything?</span>
+                                <span class="faq-arrow">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>No. All ingredients, tools, and materials are prepared for you in the atelier.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>How long does the workshop last?</span>
+                                <span class="faq-arrow">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Most sessions last around one hour, with a little extra time for final adjustments
+                                    and packaging.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>Can I cancel or reschedule?</span>
+                                <span class="faq-arrow">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes. Changes are possible up to 24 hours before your reservation, subject to
+                                    availability.</p>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
+            </section>
 
-                <article class="pricing-card featured">
-                    <div class="pricing-badge">Most popular</div>
-                    <div class="pricing-image couple-image"></div>
-                    <div class="pricing-content">
-                        <h3>Couple Plan</h3>
-                        <p class="pricing-details">2 people<br>Create perfume together<br>Duration : 1 hour</p>
-                        <div class="pricing-footer">
-                            <p class="pricing-price">&yen;10000</p>
-                            <a class="pricing-button" href="#">Book Now</a>
+            <section class="section access-section" id="access">
+                <div class="container access-layout">
+                    <div class="access-copy">
+                        <p class="section-kicker">Access</p>
+                        <h2>In the heart of Asakusa</h2>
+                        <p class="section-lead">
+                            An intimate fragrance space located a short walk from Asakusa Station, surrounded by the
+                            calm rhythm of old Tokyo.
+                        </p>
+
+                        <div class="access-info">
+                            <article class="access-card">
+                                <h3><i class="fa-solid fa-location-dot"></i> Address</h3>
+                                <p>1-2-3 Asakusa, Taito City, Tokyo, Japan</p>
+                            </article>
+                            <article class="access-card">
+                                <h3><i class="fa-solid fa-train"></i> Nearest station</h3>
+                                <p>Asakusa Station, around 5 minutes on foot</p>
+                            </article>
+                            <article class="access-card">
+                                <h3><i class="fa-regular fa-clock"></i> Opening hours</h3>
+                                <p>Daily from 10:00 to 18:00</p>
+                            </article>
+                        </div>
+
+                        <div class="access-features">
+                            <div class="access-feature"><i class="fa-solid fa-train-subway"></i><span>Easy metro
+                                    access</span></div>
+                            <div class="access-feature"><i class="fa-solid fa-square-parking"></i><span>Nearby
+                                    parking</span></div>
+                            <div class="access-feature"><i class="fa-solid fa-globe"></i><span>English
+                                    support</span></div>
                         </div>
                     </div>
-                </article>
 
-                <article class="pricing-card basic-card">
-                    <div class="pricing-image addon-image"></div>
-                    <div class="pricing-content">
-                        <h3>Optional Add-ons</h3>
-                        <p class="pricing-details">Extra ingredients<br>Luxury bottle<br>Gift packaging</p>
-                        <div class="pricing-footer">
-                            <p class="pricing-price">from &yen;1000</p>
-                            <span class="pricing-button pricing-button-placeholder" aria-hidden="true">Book Now</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section class="reserve-section" id="reservation">
-            <div class="reserve-image">
-                <img src="images/reserve-workshop.png" alt="Perfume workshop experience">
-            </div>
-            <h2 class="reserve-title">Reserve Your Experience</h2>
-            <p class="reserve-subtitle">Choose your preferred date and time to create your own fragrance.</p>
-            <div class="reserve-steps">
-                <article class="reserve-step reserve-step-date">
-                    <div class="reserve-step-icon">
-                        <i class="fa-regular fa-calendar"></i>
-                    </div>
-                    <h3>Select Date</h3>
-                    <p>Choose your preferred workshop date.</p>
-                </article>
-                <article class="reserve-step reserve-step-participants">
-                    <div class="reserve-step-icon">
-                        <i class="fa-solid fa-user-group"></i>
-                    </div>
-                    <h3>Select participants</h3>
-                    <p>Choose the number of people joining.</p>
-                </article>
-                <article class="reserve-step reserve-step-payment">
-                    <div class="reserve-step-icon">
-                        <i class="fa-regular fa-credit-card"></i>
-                    </div>
-                    <h3>Payment</h3>
-                    <p>Secure your booking with online payment.</p>
-                </article>
-                <article class="reserve-step reserve-step-confirmation">
-                    <div class="reserve-step-icon">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <h3>Confirmation</h3>
-                    <p>Receive your booking confirmation instantly.</p>
-                </article>
-            </div>
-            <a href="#" class="reserve-button">Reserve Now</a>
-        </section>
-
-        <section class="faq-section" id="faq">
-            <h2 class="faq-title">FAQ</h2>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question" type="button">
-                        <span>Do i need to bring anything?</span>
-                        <span class="faq-arrow">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No, all materials are provided during the workshop.</p>
+                    <div class="access-map-area">
+                        <img class="access-map" src="images/access-map.png" alt="Map showing the atelier location">
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" type="button">
-                        <span>How long does the workshop last?</span>
-                        <span class="faq-arrow">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>The workshop typically lasts around 2 hours.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" type="button">
-                        <span>Can i cancel or reschedule my booking?</span>
-                        <span class="faq-arrow">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, you can cancel or reschedule up to 24 hours before the schedule time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="access-section" id="access">
-            <h2>Access</h2>
-            <p class="access-subtitle">Our fragrance workshop is located in the heart of Asakusa.<br>It is easily
-                accessible from Asakusa Station.</p>
-
-            <div class="access-layout">
-                <div class="access-map-area">
-                    <div class="access-map"></div>
-                </div>
-
-                <div class="access-info">
-                    <article class="access-card access-card-address">
-                        <h3 class="access-card-title"><i class="fa-solid fa-location-dot access-card-icon"
-                                aria-hidden="true"></i><span>Address</span></h3>
-                        <p>1-2-3 Asakusa, Taito City Tokyo, Japan</p>
-                    </article>
-
-                    <article class="access-card access-card-station">
-                        <h3 class="access-card-title"><i class="fa-solid fa-train access-card-icon"
-                                aria-hidden="true"></i><span>Nearest Station</span></h3>
-                        <p>Asakusa Station - 5 min walk</p>
-                    </article>
-
-                    <article class="access-card access-card-hours">
-                        <h3 class="access-card-title"><i class="fa-regular fa-clock access-card-icon"
-                                aria-hidden="true"></i><span>Opening Hours</span></h3>
-                        <p>Mon - Sun: 10:00-18:00</p>
-                    </article>
-                </div>
-            </div>
-
-            <div class="access-features">
-                <div class="access-feature">
-                    <i class="fa-solid fa-train-subway feature-icon-1" aria-hidden="true"></i>
-                    <p>Easy access From metro &amp; Bus</p>
-                </div>
-                <div class="access-feature">
-                    <i class="fa-solid fa-square-parking feature-icon-2" aria-hidden="true"></i>
-                    <p>Parking available</p>
-                </div>
-                <div class="access-feature">
-                    <i class="fa-solid fa-globe feature-icon-3" aria-hidden="true"></i>
-                    <p>English Support</p>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
         <footer class="site-footer">
-            <div class="footer-grid">
+            <div class="container footer-grid">
                 <div class="footer-brand">
-                    <h3>Fragrance Workshop</h3>
-                    <p>Create your own<br>perfume experience in<br>Asakusa.</p>
+                    <a class="brand footer-brand-link" href="#top" aria-label="Fragrance Workshop home">
+                        <img src="images/site-logo-mark.png" alt="" aria-hidden="true">
+                        <span class="brand-copy">
+                            <strong>Atelier Asakusa</strong>
+                            <small>Fragrance Workshop</small>
+                        </span>
+                    </a>
+                    <p>Create your own perfume in a calm, refined atelier in Asakusa.</p>
                 </div>
 
                 <div class="footer-links">
-                    <h3>Quick Links</h3>
+                    <h3>Navigate</h3>
                     <ul>
-                        <li><a href="#"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-                        <li><a href="#"><i class="fa-solid fa-calendar"></i><span>Reservation</span></a></li>
-                        <li><a href="#"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
-                        <li><a href="#"><i class="fa-solid fa-location-dot"></i><span>Access</span></a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#reservation">Reservation</a></li>
+                        <li><a href="#access">Access</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-legal">
-                    <h3>Legal</h3>
+                <div class="footer-links">
+                    <h3>Information</h3>
                     <ul>
-                        <li><a href="#"><i class="fa-solid fa-shield-halved"></i><span>Privacy Policy</span></a></li>
-                        <li><a href="#"><i class="fa-regular fa-file-lines"></i><span>Terms of Service</span></a></li>
-                        <li><a href="#"><i class="fa-regular fa-envelope"></i><span>Contact</span></a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-social">
+                    <h3>Follow</h3>
                     <div class="footer-social-icons">
                         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1321,22 +382,13 @@
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2026 Fragrance Workshop. All rights reserved.</p>
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Atelier Asakusa. All rights reserved.</p>
             </div>
         </footer>
-
     </div>
 
-    <script>
-        document.querySelectorAll('.faq-question').forEach((button) => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

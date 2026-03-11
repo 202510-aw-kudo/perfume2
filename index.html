@@ -31,18 +31,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
+            padding: 8px 12px;
+            background: #f6eeea;
+            border: 1px solid #cfc6c1;
+            box-sizing: border-box;
         }
 
         .navbar-logo {
-            font-weight: 700;
-            letter-spacing: 0.08em;
+            font-size: 18px;
+            font-weight: 400;
+            color: #222;
         }
 
         .navlinks {
             display: flex;
-            gap: 15px;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .navlinks a {
+            color: #222;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .navlinks a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         /* HERO */
@@ -1027,12 +1043,13 @@
             <div class="navbar-logo">
                 LOGO
             </div>
-            <div class="navlinks">
-                <div>ABOUT</div>
-                <div>SERVICES</div>
-                <div>BLOG</div>
-                <div>MENU</div>
-            </div>
+            <nav class="navlinks" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#reservation">Reservation</a>
+                <a href="#faq">FAQ</a>
+                <a href="#access">Access</a>
+            </nav>
         </div>
 
         <div class="hero">
@@ -1044,7 +1061,7 @@
             <div class="hero-cta">Book Now</div>
         </div>
 
-        <section class="experience-section">
+        <section class="experience-section" id="about">
             <h2>About The Experience</h2>
             <div class="experience-grid">
                 <article class="experience-card">
@@ -1102,7 +1119,7 @@
             </div>
         </section>
 
-        <section class="pricing-section">
+        <section class="pricing-section" id="pricing">
             <h2>Plan &amp; Pricing</h2>
             <div class="pricing-line"></div>
             <div class="pricing-grid">
@@ -1144,7 +1161,7 @@
                 </article>
             </div>
         </section>
-        <section class="reserve-section">
+        <section class="reserve-section" id="reservation">
             <div class="reserve-image">
                 <img src="images/reserve-workshop.png" alt="Perfume workshop experience">
             </div>
@@ -1183,7 +1200,7 @@
             <a href="#" class="reserve-button">Reserve Now</a>
         </section>
 
-        <section class="faq-section">
+        <section class="faq-section" id="faq">
             <h2 class="faq-title">FAQ</h2>
             <div class="faq-accordion">
                 <div class="faq-item">
@@ -1217,7 +1234,7 @@
                 </div>
             </div>
         </section>
-        <section class="access-section">
+        <section class="access-section" id="access">
             <h2>Access</h2>
             <p class="access-subtitle">Our fragrance workshop is located in the heart of Asakusa.<br>It is easily
                 accessible from Asakusa Station.</p>

@@ -374,7 +374,7 @@ h3 {
 }
 
 .section {
-    padding: 110px 0;
+    padding: 92px 0;
 }
 
 .section-heading {
@@ -566,7 +566,7 @@ h3 {
     width: 100%;
     height: 760px;
     object-fit: cover;
-    object-position: 68% center;
+    object-position: 70% center;
     border-radius: calc(var(--radius-lg) + 4px);
     box-shadow: var(--shadow);
 }
@@ -994,7 +994,7 @@ h3 {
     }
 
     .section {
-        padding: 82px 0;
+        padding: 72px 0;
     }
 
     .experience-card img,

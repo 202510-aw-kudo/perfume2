@@ -225,8 +225,8 @@ h3 {
     display: flex;
     align-items: center;
     background:
-        linear-gradient(180deg, rgba(24, 18, 16, 0.2), rgba(24, 18, 16, 0.58)),
-        url("images/hero.png") center center / cover no-repeat;
+        linear-gradient(180deg, rgba(24, 18, 16, 0.08), rgba(24, 18, 16, 0.28)),
+        url("images/others-8.png") center center / cover no-repeat;
 }
 
 .hero::after {
@@ -234,8 +234,8 @@ h3 {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(24, 18, 16, 0.72) 0%, rgba(24, 18, 16, 0.42) 34%, rgba(24, 18, 16, 0.16) 58%, rgba(24, 18, 16, 0.28) 100%),
-        linear-gradient(180deg, rgba(14, 10, 9, 0.12) 0%, rgba(14, 10, 9, 0.3) 100%);
+        linear-gradient(90deg, rgba(24, 18, 16, 0.38) 0%, rgba(24, 18, 16, 0.2) 34%, rgba(24, 18, 16, 0.06) 58%, rgba(24, 18, 16, 0.14) 100%),
+        linear-gradient(180deg, rgba(14, 10, 9, 0.05) 0%, rgba(14, 10, 9, 0.14) 100%);
 }
 
 .hero-content {
